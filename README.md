@@ -24,10 +24,7 @@ docker安装方式省略
 
 vnc端口号5901 密码 kivydev 
 
-如有需要，那就手动启动vnc服务
-```
-/etc/init.d/vncserver start
-```
+启动vnc服务命令 /etc/init.d/vncserver start
 
 镜像有点大，解压后有16G
 
@@ -49,7 +46,7 @@ docker load --input buildozer.docker
 #    使用docker images查看镜像id
 docker run -itd -p 30022:22 1196ea15dad6
 
-# 5. 此时ssh -p30022 kivydev@127.0.0.1即可连上kivydev
+# 5. 此时ssh -p30022 kivydev@127.0.0.1即可连上buildozer
 #    也可以直接进入容器
 #    使用docker ps查看容器id
 docker exec -it 7c07ba426a27 /bin/bash # 
