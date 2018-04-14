@@ -1,10 +1,10 @@
 ## 写在前面
 
-感谢面包@nkiiiiid的指引，搭建了docker版本的kivydev环境。
+感谢面包@nkiiiiid的指引，搭建了docker版本的buildozer打包环境。
 
-本环境是buildozer打包方式，python2和python3都可打包，但python3打包numpy和opencv等库会报错(纯py库可以)，待解决。
+python2和python3都可打包，但python3打包numpy和opencv等库会报错(纯py库可以)，待解决。
 
-p4a打包方式其实也可以，但还没解决private.mp3 no found报错问题，待解决。
+p4a打包方式其实也可以，但还没解决private.mp3 not found报错问题，待解决。
 
 环境搭建教程来源：https://github.com/nkiiiiid/kivydev-note
 
@@ -16,15 +16,16 @@ docker镜像下载地址 https://share.weiyun.com/5e3ewiY
 
 docker安装方式省略
 
-系统 Ubuntu 16.04 64位
+系统 Ubuntu 16.04 64位 amd64架构
 
 用户名 kivydev 密码 kivydev
 
 用户名root 密码 kivydev
 
-vnc端口号5901 密码 kivydev
+vnc端口号5901 密码 kivydev 
+
+如有需要，那就手动启动vnc服务
 ```
-# vnc启动方式
 /etc/init.d/vncserver start
 ```
 
@@ -32,7 +33,7 @@ vnc端口号5901 密码 kivydev
 
 已配置ssh、vnc, 需要ssh和vnc连接的话新建容器时需要映射22和5901端口.
 
-## 0x01 启动kivydev镜像
+## 0x01 导入并启动buildozer镜像
 
 ```
 # 1. 安装p7zip(ubuntu为例)
